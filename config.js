@@ -1,59 +1,35 @@
 /**
- * Настройки сайта Валерии.
+ * Настройки лендинга — поменяйте под себя перед публикацией.
  */
-const SITE_CONFIG = {
+const TAPLINK_CONFIG = {
+  name: "Елена Соколова",
+  /** Ссылка на запись (Calendly, Tilda, Google Form и т.д.) */
   bookingUrl: "#booking",
-  waitlistUrl: "#booking",
-
-  telegram: "https://t.me/your_username",
-  instagram: "https://instagram.com/your_username",
-  whatsapp: "https://wa.me/0000000000",
-
-  photos: {
-    portrait: "images/hero.jpg",
-    lifestyle: "images/lifestyle.jpg",
-    food: "images/lifestyle.jpg",
-    detail: "images/hero.jpg",
-    flowers: "images/contacts.jpg",
-    footer: "images/contacts.jpg",
-  },
+  /** Telegram, WhatsApp или почта */
+  contactUrl: "https://t.me/your_username",
 };
 
 (function applyConfig() {
-  const { bookingUrl, waitlistUrl, telegram, instagram, whatsapp, photos } = SITE_CONFIG;
+  const nameEl = document.querySelector("[data-config='name']");
+  if (nameEl && TAPLINK_CONFIG.name) {
+    nameEl.textContent = TAPLINK_CONFIG.name;
+    document.title = `${TAPLINK_CONFIG.name} — нутрициолог`;
+  }
 
-  document.querySelectorAll('[data-link="booking"]').forEach((el) => {
-    if (bookingUrl && !bookingUrl.startsWith("#")) {
-      el.href = bookingUrl;
+  document.querySelectorAll("[data-link='booking']").forEach((el) => {
+    if (TAPLINK_CONFIG.bookingUrl && !TAPLINK_CONFIG.bookingUrl.startsWith("#")) {
+      el.href = TAPLINK_CONFIG.bookingUrl;
       el.target = "_blank";
       el.rel = "noopener noreferrer";
     }
   });
 
-  const waitlistBtn = document.querySelector('[data-link="waitlist"]');
-  if (waitlistBtn && waitlistUrl) {
-    waitlistBtn.href = waitlistUrl;
-    if (!waitlistUrl.startsWith("#")) {
-      waitlistBtn.target = "_blank";
-      waitlistBtn.rel = "noopener noreferrer";
+  const contactBtn = document.querySelector("[data-link='contact']");
+  if (contactBtn && TAPLINK_CONFIG.contactUrl) {
+    contactBtn.href = TAPLINK_CONFIG.contactUrl;
+    if (TAPLINK_CONFIG.contactUrl.startsWith("http")) {
+      contactBtn.target = "_blank";
+      contactBtn.rel = "noopener noreferrer";
     }
   }
-
-  Object.entries({ telegram, instagram, whatsapp }).forEach(([key, url]) => {
-    const el = document.querySelector(`[data-link="${key}"]`);
-    if (el && url && url !== "#") {
-      el.href = url;
-      el.target = "_blank";
-      el.rel = "noopener noreferrer";
-    }
-  });
-
-  function setPhoto(key, src) {
-    if (!src) return;
-    document.querySelectorAll(`[data-photo="${key}"]`).forEach((el) => {
-      el.style.backgroundImage = `url("${src}")`;
-    });
-  }
-
-  Object.entries(photos).forEach(([key, src]) => setPhoto(key, src));
 })();

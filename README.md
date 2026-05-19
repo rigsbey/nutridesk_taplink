@@ -1,22 +1,32 @@
-# Валерия — taplink-лендинг
+# nutridesk_taplink
 
-Мобильная визитка нутрициолога: запросы → что делаю → форматы → выбор → запись.
+Одностраничный мини-лендинг в стиле Taplink для нутрициолога. Статический HTML/CSS, без сборки.
 
-## Запуск
+## Локальный просмотр
 
 ```bash
 cd /Users/kamil/PycharmProjects/nutridesk_taplink
 python3 -m http.server 8765
 ```
 
-http://localhost:8765
-
-## Шрифты
-
-- **Montserrat** — текст (Google Fonts)
-- **Kudryashev Display** — заголовки → `fonts/KudryashevDisplay-Regular.woff2`
-- **Sloop Script** — подписи → `fonts/SloopScript-Regular.woff2`
+Откройте http://localhost:8765
 
 ## Настройка
 
-`config.js` — ссылки и пути к фото (`portrait`, `lifestyle`, `food`, `detail`, `flowers`, `footer`).
+1. Имя и ссылки — в `config.js` (`name`, `bookingUrl`, `contactUrl`).
+2. Тексты и имя в разметке — в `index.html` при необходимости.
+3. Цвета и шрифты — в `styles.css` (`:root`).
+
+## Деплой
+
+- **Vercel / Netlify**: корень проекта, без build command.
+- **GitHub Pages**: включите Pages для репозитория, папка `/` (root).
+- **Taplink**: можно вставить ссылку на этот сайт как основную кнопку «Сайт».
+
+## Структура
+
+| Файл        | Назначение              |
+|-------------|-------------------------|
+| `index.html`| Разметка блоков         |
+| `styles.css`| Стили (milk, sage)      |
+| `config.js` | Имя и ссылки            |
