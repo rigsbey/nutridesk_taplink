@@ -3,146 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Нутрициологический подход к питанию, энергии, анализам и самочувствию. Консультации без жёстких диет." />
-  <meta name="theme-color" content="#f7f4ef" />
-  <title>Нутрициолог — консультации</title>
+  <meta name="description" content="Валерия — нутрициолог. Питание, анализы, ЖКТ, дефициты, усталость. Консультации и сопровождение без жёстких диет." />
+  <meta name="theme-color" content="#f9f6f0" />
+  <title>Валерия — нутрициолог</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
 
   <div class="page">
+    <!-- 1. Hero -->
     <header class="hero" id="main">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <p class="hero__eyebrow">Нутрициолог</p>
-      <h1 class="hero__name" data-config="name">Елена Соколова</h1>
-      <p class="hero__tagline">Нутрициологический подход к питанию, энергии, анализам и самочувствию</p>
+      <p class="deco" aria-hidden="true">✦</p>
+      <p class="hero__role">нутрициолог</p>
+      <h1 class="hero__name">Валерия</h1>
+
+      <figure class="photo photo--portrait">
+        <div class="photo__slot" data-photo="portrait" role="img" aria-label="Фото Валерии">
+          <span class="photo__label">портрет</span>
+        </div>
+      </figure>
+
       <p class="hero__lead">
-        Помогаю разобраться с питанием, дефицитами, ЖКТ, усталостью, кожей и циклом без жёстких диет и хаоса.
+        Помогаю разобраться с питанием, анализами, дефицитами, ЖКТ, усталостью, кожей, циклом и весом —
+        без жёстких диет и хаоса.
       </p>
-      <a class="btn btn--primary" href="#booking" data-link="booking">Записаться на консультацию</a>
+      <a class="btn btn--primary" href="#booking" data-link="booking">записаться</a>
     </header>
 
-    <section class="section" aria-labelledby="topics-heading">
-      <h2 class="section__title" id="topics-heading">С чем ко мне</h2>
-      <ul class="topic-grid">
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">Питание и вес</h3>
-          <p class="topic-card__text">Баланс без подсчёта каждой крошки и вечных ограничений.</p>
-        </li>
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">ЖКТ и вздутие</h3>
-          <p class="topic-card__text">Понять триггеры и собрать рацион, который не раздражает.</p>
-        </li>
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">Усталость и энергия</h3>
-          <p class="topic-card__text">Связь сна, питания и нагрузки — без «волшебных» добавок.</p>
-        </li>
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">Анализы и дефициты</h3>
-          <p class="topic-card__text">Разбор показателей и понятные шаги по питанию и режиму.</p>
-        </li>
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">Кожа и высыпания</h3>
-          <p class="topic-card__text">Питание как часть общей картины, а не отдельная «диета от прыщей».</p>
-        </li>
-        <li class="topic-card">
-          <span class="topic-card__icon" aria-hidden="true">◦</span>
-          <h3 class="topic-card__title">Цикл и женское здоровье</h3>
-          <p class="topic-card__text">Поддержка в разные фазы цикла и при гормональных изменениях.</p>
-        </li>
+    <div class="wave" aria-hidden="true"></div>
+
+    <!-- 2. С чем прийти -->
+    <section class="block" id="topics" aria-labelledby="topics-title">
+      <p class="block__label">запросы</p>
+      <h2 class="block__title" id="topics-title">С чем можно прийти</h2>
+      <ul class="topic-list">
+        <li>не получается наладить питание</li>
+        <li>есть усталость, отёки, тяга к сладкому</li>
+        <li>беспокоит ЖКТ: вздутие, тяжесть, нестабильный стул</li>
+        <li>есть дефициты по анализам</li>
+        <li>непонятно, какие анализы сдавать</li>
+        <li>вес стоит или постоянно возвращается</li>
+        <li>болезненный цикл / ПМС / высыпания</li>
+        <li>хочется понять, что есть каждый день без диет</li>
       </ul>
     </section>
 
-    <section class="section section--services" aria-labelledby="services-heading" id="services">
-      <h2 class="section__title" id="services-heading">Услуги</h2>
-      <div class="service-list">
-        <article class="service-card">
-          <h3 class="service-card__title">Разовая консультация</h3>
-          <p class="service-card__desc">
-            Онлайн-встреча 60–90 минут: разбираем запрос, питание, анализы и образ жизни. Уходите с ясными первыми шагами.
-          </p>
-          <p class="service-card__for"><span>Кому подходит:</span> если нужна опора и понять, в какую сторону двигаться дальше.</p>
-          <a class="btn btn--secondary" href="#booking" data-link="booking">Подробнее / Записаться</a>
+    <!-- 3. Обо мне -->
+    <section class="block block--about" aria-labelledby="about-title">
+      <p class="block__label">обо мне</p>
+      <h2 class="block__title" id="about-title">Валерия</h2>
+
+      <figure class="photo photo--wide">
+        <div class="photo__slot" data-photo="lifestyle" role="img" aria-label="Lifestyle">
+          <span class="photo__label">lifestyle</span>
+        </div>
+      </figure>
+
+      <div class="prose">
+        <p>Я Валерия, учусь в Сеченовском университете на направлении доказательной нутрициологии.</p>
+        <p>
+          Я не пришла в эту сферу из идеи «идеального питания». На себе знаю, как сложно наладить рацион,
+          перестать метаться между ограничениями и хаосом, прийти к комфортным цифрам и при этом не потерять
+          нормальную жизнь.
+        </p>
+        <p>
+          Также я живу с аутоиммунным заболеванием щитовидной железы, поэтому хорошо понимаю, как важно смотреть
+          на питание шире: не только через калории, а через анализы, состояние, энергию, сон, цикл, стресс и
+          реальные привычки.
+        </p>
+        <p>
+          В работе я не запугиваю, не даю универсальные схемы и не обещаю «волшебный результат». Моя задача —
+          спокойно разобрать вашу ситуацию и собрать понятный план, который можно выполнять в обычной жизни.
+        </p>
+      </div>
+
+      <ul class="accent-tags">
+        <li>студент доказательной нутрициологии Сеченовского университета</li>
+        <li>личный опыт работы с питанием и состоянием</li>
+        <li>фокус на анализах, привычках и реальной жизни</li>
+        <li>без жёстких диет и крайностей</li>
+      </ul>
+    </section>
+
+    <!-- 4. Что я делаю -->
+    <section class="block" aria-labelledby="do-title">
+      <p class="block__label">работа</p>
+      <h2 class="block__title" id="do-title">Что я делаю</h2>
+      <ul class="do-list">
+        <li>разбираю питание и привычки</li>
+        <li>смотрю анализы и возможные дефициты</li>
+        <li>объясняю, что может влиять на состояние</li>
+        <li>даю понятные рекомендации по еде, режиму и добавкам</li>
+        <li>помогаю внедрить изменения без перегруза</li>
+        <li>при необходимости подсказываю, к какому врачу обратиться</li>
+      </ul>
+    </section>
+
+    <!-- 5. Нутри-стратегия -->
+    <section class="block block--strategy" aria-labelledby="strategy-title">
+      <p class="block__label">важно</p>
+      <h2 class="block__title" id="strategy-title">Что такое нутри-стратегия</h2>
+
+      <p class="strategy__lead">
+        Нутри-стратегия — это персональный документ с понятным планом: питание, режим, добавки, анализы,
+        привычки и шаги внедрения.
+      </p>
+      <p class="prose__p">
+        Это не универсальная схема и не меню «на 1200 ккал». Я собираю анкету, питание, жалобы, анализы и цели —
+        и на основе этого составляю план, с которым можно работать дальше.
+      </p>
+      <p class="strategy__note">
+        <strong>Не обязательная услуга для всех</strong> — это персональный план, который входит в сопровождение
+        или заказывается отдельно.
+      </p>
+
+      <ul class="strategy-where">
+        <li><span>полное сопровождение</span> — стратегия входит полностью</li>
+        <li><span>отдельно</span> — можно заказать без сопровождения</li>
+        <li><span>лайт-сопровождение</span> — краткая выписка рекомендаций вместо полной стратегии</li>
+      </ul>
+    </section>
+
+    <!-- Moodboard -->
+    <div class="moodboard" aria-hidden="true">
+      <div class="moodboard__item moodboard__item--tall" data-photo="food"><span>еда</span></div>
+      <div class="moodboard__item" data-photo="detail"><span>детали</span></div>
+      <div class="moodboard__item" data-photo="flowers"><span>цветы</span></div>
+    </div>
+
+    <!-- 6. Форматы -->
+    <section class="block block--formats" id="formats" aria-labelledby="formats-title">
+      <p class="block__label">форматы</p>
+      <h2 class="block__title" id="formats-title">Форматы работы</h2>
+      <p class="block__intro">Четыре варианта — от разового разбора до полного сопровождения.</p>
+
+      <div class="formats">
+        <article class="format format--main">
+          <p class="format__badge">главный продукт</p>
+          <h3 class="format__name">Полное сопровождение 4 недели</h3>
+          <p class="format__for">Для тех, кто хочет не просто рекомендации, а совместную работу и внедрение.</p>
+          <p class="format__heading">Что входит</p>
+          <ul class="format__list format__list--yes">
+            <li>5 созвонов</li>
+            <li>4 недели работы</li>
+            <li>общение и поддержка по ходу работы</li>
+            <li>разбор питания, анализов, привычек и состояния</li>
+            <li>рекомендации по питанию, режиму, добавкам</li>
+            <li>работа с внедрением изменений</li>
+            <li>полная персональная нутри-стратегия</li>
+          </ul>
+          <p class="format__price">25&nbsp;000₽</p>
+          <a class="btn btn--outline" href="#booking" data-link="booking">записаться</a>
         </article>
 
-        <article class="service-card service-card--featured">
-          <p class="service-card__badge">Популярный формат</p>
-          <h3 class="service-card__title">Нутри-стратегия</h3>
-          <p class="service-card__desc">
-            Персональный план: питание, режим, приоритеты по анализам и добавкам при необходимости. Всё в одном документе.
-          </p>
-          <p class="service-card__for"><span>Кому подходит:</span> если хотите структуру и план, но без еженедельного сопровождения.</p>
-          <a class="btn btn--secondary" href="#booking" data-link="booking">Подробнее / Записаться</a>
+        <article class="format">
+          <h3 class="format__name">Лайт-сопровождение 4 недели</h3>
+          <p class="format__for">Для тех, кому нужна структура и направление, но без глубокого сопровождения.</p>
+          <p class="format__heading">Что входит</p>
+          <ul class="format__list format__list--yes">
+            <li>4 недели работы</li>
+            <li>2 созвона</li>
+            <li>базовая поддержка</li>
+            <li>разбор питания и состояния</li>
+            <li>краткая выписка рекомендаций</li>
+          </ul>
+          <p class="format__exclude">Без полной нутри-стратегии и без глубокой работы с образом жизни.</p>
+          <p class="format__price">12&nbsp;000₽</p>
+          <a class="btn btn--outline" href="#booking" data-link="booking">записаться</a>
         </article>
 
-        <article class="service-card">
-          <h3 class="service-card__title">Сопровождение 4 недели</h3>
-          <p class="service-card__desc">
-            Стартовая консультация, план и четыре недели поддержки: корректировки, ответы на вопросы, адаптация под жизнь.
-          </p>
-          <p class="service-card__for"><span>Кому подходит:</span> если важно не остаться один на один с изменениями.</p>
-          <a class="btn btn--secondary" href="#booking" data-link="booking">Подробнее / Записаться</a>
+        <article class="format">
+          <h3 class="format__name">Нутри-стратегия без сопровождения</h3>
+          <p class="format__for">Для тех, кто готов внедрять самостоятельно.</p>
+          <p class="format__heading">Что входит</p>
+          <ul class="format__list format__list--yes">
+            <li>анкета и сбор информации</li>
+            <li>разбор питания, жалоб и анализов</li>
+            <li>персональный документ с рекомендациями</li>
+            <li>питание, режим, добавки, анализы, первые шаги</li>
+          </ul>
+          <p class="format__exclude">Без созвонов и сопровождения.</p>
+          <p class="format__price">8&nbsp;000₽</p>
+          <a class="btn btn--outline" href="#booking" data-link="booking">записаться</a>
+        </article>
+
+        <article class="format">
+          <h3 class="format__name">Разовая консультация</h3>
+          <p class="format__for">Для конкретного вопроса.</p>
+          <p class="format__heading">Что входит</p>
+          <ul class="format__list format__list--yes">
+            <li>60 минут созвон</li>
+            <li>разбор одного или нескольких запросов</li>
+            <li>ответы на вопросы</li>
+            <li>краткие рекомендации после встречи</li>
+          </ul>
+          <p class="format__fits">Подходит для: анализов, питания, плато, дефицитов, ЖКТ, цикла, кожи, усталости.</p>
+          <p class="format__exclude">Без сопровождения и без нутри-стратегии.</p>
+          <p class="format__price">5&nbsp;000₽</p>
+          <a class="btn btn--outline" href="#booking" data-link="booking">записаться</a>
         </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-heading">
-      <h2 class="section__title" id="process-heading">Как проходит работа</h2>
-      <ol class="steps">
-        <li class="step">
-          <span class="step__num">01</span>
-          <div class="step__body">
-            <h3 class="step__title">Анкета</h3>
-            <p class="step__text">Вы заполняете короткую форму о питании, самочувствии и целях.</p>
-          </div>
+    <!-- 7. Как выбрать -->
+    <section class="block block--choose" aria-labelledby="choose-title">
+      <p class="block__label">выбор</p>
+      <h2 class="block__title" id="choose-title">Как понять, что выбрать</h2>
+      <ol class="choose-list">
+        <li>
+          <span class="choose-list__num">01</span>
+          <p>Если нужен <strong>быстрый разбор вопроса</strong> → консультация.</p>
         </li>
-        <li class="step">
-          <span class="step__num">02</span>
-          <div class="step__body">
-            <h3 class="step__title">Анализ питания и жалоб</h3>
-            <p class="step__text">На встрече собираем картину: рацион, анализы, сон, стресс, цикл.</p>
-          </div>
+        <li>
+          <span class="choose-list__num">02</span>
+          <p>Если хотите <strong>получить план и делать сами</strong> → нутри-стратегия.</p>
         </li>
-        <li class="step">
-          <span class="step__num">03</span>
-          <div class="step__body">
-            <h3 class="step__title">План действий</h3>
-            <p class="step__text">Понятные шаги без лишней сложности — с учётом вашего ритма жизни.</p>
-          </div>
+        <li>
+          <span class="choose-list__num">03</span>
+          <p>Если нужна <strong>поддержка, но без глубокого формата</strong> → лайт-сопровождение.</p>
         </li>
-        <li class="step">
-          <span class="step__num">04</span>
-          <div class="step__body">
-            <h3 class="step__title">Поддержка и корректировки</h3>
-            <p class="step__text">При сопровождении — связь и правки плана по ходу.</p>
-          </div>
+        <li>
+          <span class="choose-list__num">04</span>
+          <p>Если хотите <strong>результат через совместную работу</strong> → полное сопровождение.</p>
         </li>
       </ol>
     </section>
 
-    <section class="trust" aria-label="Подход к работе">
-      <blockquote class="trust__quote">
-        Я не даю универсальные схемы и не работаю через запреты. Моя задача — собрать картину целиком и дать понятный план, который можно реально выполнять.
-      </blockquote>
+    <!-- 8. Скоро -->
+    <section class="block block--soon" aria-labelledby="soon-title">
+      <p class="sticker">скоро</p>
+      <h2 class="block__title" id="soon-title">Курс</h2>
+      <p class="soon__text">
+        В середине июня открываю запись на первый поток курса. Это будет формат для тех, кто хочет спокойно
+        наладить питание, понять своё состояние и внедрить базу без жёстких диет.
+      </p>
+      <a class="btn btn--primary" href="#booking" data-link="waitlist">хочу в список ожидания</a>
     </section>
 
-    <section class="cta-final" aria-labelledby="cta-heading" id="booking">
-      <h2 class="cta-final__title" id="cta-heading">Хотите понять, с чего начать?</h2>
-      <p class="cta-final__text">Напишите пару слов о запросе — подскажу подходящий формат.</p>
-      <a class="btn btn--primary btn--wide" href="#" data-link="contact">Написать мне</a>
-    </section>
+    <!-- 9. Контакты -->
+    <footer class="contacts" id="booking" aria-labelledby="contacts-title">
+      <p class="block__label">связь</p>
+      <h2 class="block__title" id="contacts-title">Контакты</h2>
 
-    <footer class="footer">
-      <p class="footer__note">Информация на сайте носит ознакомительный характер и не заменяет консультацию врача.</p>
+      <figure class="photo photo--footer">
+        <div class="photo__slot" data-photo="footer" role="img" aria-label="Детали">
+          <span class="photo__label">детали</span>
+        </div>
+      </figure>
+
+      <nav class="contacts__nav" aria-label="Мессенджеры">
+        <a class="contacts__link" href="#" data-link="telegram">Telegram</a>
+        <a class="contacts__link" href="#" data-link="instagram">Instagram</a>
+        <a class="contacts__link" href="#" data-link="whatsapp">WhatsApp</a>
+      </nav>
+
+      <p class="contacts__note">Открыта к новым клиентам с июня 2026.</p>
+      <p class="legal">Информация на сайте носит ознакомительный характер и не заменяет консультацию врача.</p>
     </footer>
   </div>
 

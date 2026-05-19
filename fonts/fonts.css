@@ -1,0 +1,23 @@
+/* Локальные шрифты — положите .woff2 в эту папку (см. README.md) */
+
+@font-face {
+  font-family: "Kudryashev Display";
+  src:
+    url("KudryashevDisplay-Regular.woff2") format("woff2"),
+    url("KudryashevDisplay.woff2") format("woff2"),
+    url("Kudryashev-Display-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sloop Script";
+  src:
+    url("SloopScript-Regular.woff2") format("woff2"),
+    url("Sloop-ScriptOne.woff2") format("woff2"),
+    url("SloopScript.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
