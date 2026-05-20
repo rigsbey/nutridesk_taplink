@@ -4,12 +4,22 @@
 
 ## Запуск
 
+Порт **8771** — чтобы не пересекаться с другим проектом на `8765` (`http://127.0.0.1:8765/len/`).
+
 ```bash
-cd /Users/kamil/PycharmProjects/nutridesk_taplink
-python3 -m http.server 8765
+cd "/Users/vam_svetlo/nutridesk_taplink_master/nutridesk_taplink-master"
+./serve.sh
 ```
 
-http://localhost:8765
+Или вручную:
+
+```bash
+python3 -m http.server 8771 --directory .
+```
+
+Открыть: **http://127.0.0.1:8771/index.html**
+
+Другой порт: `PORT=8780 ./serve.sh`
 
 ## Шрифты
 
@@ -19,11 +29,14 @@ http://localhost:8765
 
 ## Настройка
 
-`config.js` — ссылки и пути к фото (`portrait`, `lifestyle`, `food`, `detail`, `flowers`, `footer`).
+`config.js` — ссылки, `waitlistTelegram` (username для формы курса), пути к фото.
+
+**Лист ожидания:** кнопка открывает форму → «Отправить в Telegram» → чат `@vam_svetlo` с готовым текстом заявки (нужно нажать «Отправить» в Telegram).
 
 ## Ветки
 
 | Ветка | Описание |
 |-------|----------|
-| `master` | Актуальный бежевый editorial |
+| `main` | Актуальный бежевый editorial |
+| `master` | Прежняя основная ветка на GitHub |
 | `v1-original-no-photos` | Снимок после подстановки портрета (hero), до крупного редизайна |

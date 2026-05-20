@@ -1,45 +1,44 @@
 /**
  * Настройки сайта Валерии.
  */
-const SITE_CONFIG = {
-  bookingUrl: "#booking",
-  waitlistUrl: "#booking",
+window.SITE_CONFIG = {
+  bookingUrl: "#contacts",
 
-  telegram: "https://t.me/your_username",
-  instagram: "https://instagram.com/your_username",
-  whatsapp: "https://wa.me/0000000000",
+  telegram: "https://t.me/vam_svetlo",
+  /** username без @ — куда уходит заявка из формы ожидания */
+  waitlistTelegram: "vam_svetlo",
+  instagram: "https://www.instagram.com/valeria.vam_svetlo/",
 
   photos: {
     portrait: "images/hero.jpg",
     lifestyle: "images/lifestyle.png",
     food: "images/smoothie.png",
-    detail: "images/food.png",
-    flowers: "images/bowls.png",
+    detail: "images/vegetables.png",
+    flowers: "images/nutrition-book.png",
     footer: "images/footer.png",
   },
 };
 
 (function applyConfig() {
-  const { bookingUrl, waitlistUrl, telegram, instagram, whatsapp, photos } = SITE_CONFIG;
+  const { bookingUrl, telegram, instagram, photos } = SITE_CONFIG;
 
-  document.querySelectorAll('[data-link="booking"]').forEach((el) => {
-    if (bookingUrl && !bookingUrl.startsWith("#")) {
-      el.href = bookingUrl;
-      el.target = "_blank";
-      el.rel = "noopener noreferrer";
-    }
-  });
-
-  const waitlistBtn = document.querySelector('[data-link="waitlist"]');
-  if (waitlistBtn && waitlistUrl) {
-    waitlistBtn.href = waitlistUrl;
-    if (!waitlistUrl.startsWith("#")) {
-      waitlistBtn.target = "_blank";
-      waitlistBtn.rel = "noopener noreferrer";
-    }
+  function setNavLink(selector, url) {
+    if (!url) return;
+    document.querySelectorAll(selector).forEach((el) => {
+      el.href = url;
+      if (url.startsWith("#")) {
+        el.removeAttribute("target");
+        el.removeAttribute("rel");
+      } else {
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+      }
+    });
   }
 
-  Object.entries({ telegram, instagram, whatsapp }).forEach(([key, url]) => {
+  setNavLink('[data-link="booking"]', bookingUrl);
+
+  Object.entries({ telegram, instagram }).forEach(([key, url]) => {
     const el = document.querySelector(`[data-link="${key}"]`);
     if (el && url && url !== "#") {
       el.href = url;
