@@ -5,8 +5,8 @@ window.SITE_CONFIG = {
   bookingUrl: "#contacts",
 
   telegram: "https://t.me/vam_svetlo",
-  /** username без @ — куда уходит заявка из формы ожидания */
-  waitlistTelegram: "vam_svetlo",
+  /** бот для формы листа ожидания (отображение в модалке) */
+  waitlistBot: "primera_lera_bot",
   instagram: "https://www.instagram.com/valeria.vam_svetlo/",
 
   photos: {

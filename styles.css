@@ -956,6 +956,15 @@ body.waitlist-modal-open {
   color: var(--sage-deep);
 }
 
+.waitlist-form__note--error {
+  color: #9a4f58;
+}
+
+.waitlist-form__submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
 /* —— Contacts —— */
 
 .contacts {

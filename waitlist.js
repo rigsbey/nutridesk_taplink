@@ -3,16 +3,17 @@
   const form = document.getElementById("waitlist-form");
   const openBtn = document.querySelector("[data-waitlist-open]");
   const note = document.getElementById("waitlist-form-note");
+  const submitBtn = form?.querySelector(".waitlist-form__submit");
   const telegramHint = document.getElementById("waitlist-telegram-hint");
 
   if (!modal || !form || !openBtn) return;
 
   const config = window.SITE_CONFIG || {};
-  const telegramUsername = getTelegramUsername(config);
+  const botUsername = String(config.waitlistBot || "primera_lera_bot").replace(/^@/, "");
 
-  if (telegramHint && telegramUsername) {
-    telegramHint.textContent = `@${telegramUsername}`;
-    telegramHint.href = `https://t.me/${telegramUsername}`;
+  if (telegramHint) {
+    telegramHint.textContent = `@${botUsername}`;
+    telegramHint.href = `https://t.me/${botUsername}`;
   }
 
   let lastFocus = null;
@@ -35,6 +36,13 @@
     if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
   }
 
+  function showNote(text, isError) {
+    if (!note) return;
+    note.hidden = false;
+    note.textContent = text;
+    note.classList.toggle("waitlist-form__note--error", Boolean(isError));
+  }
+
   openBtn.addEventListener("click", (event) => {
     event.preventDefault();
     openModal();
@@ -48,59 +56,55 @@
     if (event.key === "Escape" && !modal.hidden) closeModal();
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    if (!telegramUsername) {
-      if (note) {
-        note.hidden = false;
-        note.textContent = "Укажите Telegram в config.js (waitlistTelegram).";
-      }
-      return;
-    }
-
     const data = new FormData(form);
-    const firstName = String(data.get("firstName") || "").trim();
-    const lastName = String(data.get("lastName") || "").trim();
-    const goal = String(data.get("goal") || "").trim();
-    const contact = String(data.get("contact") || "").trim();
+    const payload = {
+      firstName: String(data.get("firstName") || "").trim(),
+      lastName: String(data.get("lastName") || "").trim(),
+      goal: String(data.get("goal") || "").trim(),
+      contact: String(data.get("contact") || "").trim(),
+    };
 
-    const message = [
-      "Заявка в лист ожидания (курс)",
-      "",
-      `Имя: ${firstName}`,
-      `Фамилия: ${lastName}`,
-      `Цель: ${goal}`,
-      `Связь: ${contact}`,
-    ].join("\n");
-
-    const url = buildTelegramMessageUrl(telegramUsername, message);
-    window.open(url, "_blank", "noopener,noreferrer");
-
-    if (note) {
-      note.hidden = false;
-      note.textContent = "Открылся Telegram — нажмите «Отправить» в чате, чтобы заявка дошла.";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Отправляем…";
     }
 
-    form.reset();
-    closeModal();
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok || !result.ok) {
+        const msg =
+          result.error ||
+          (res.status === 404
+            ? "Отправка работает только на Vercel (задеплойте сайт)."
+            : "Не удалось отправить. Попробуйте позже или напишите в Telegram.");
+        showNote(msg, true);
+        return;
+      }
+
+      showNote("Заявка отправлена. Скоро свяжусь с вами.", false);
+      form.reset();
+      setTimeout(closeModal, 1600);
+    } catch {
+      showNote("Нет связи с сервером. Проверьте интернет или напишите в Telegram.", true);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Отправить заявку";
+      }
+    }
   });
 })();
-
-function getTelegramUsername(config) {
-  if (config.waitlistTelegram) {
-    return String(config.waitlistTelegram).replace(/^@/, "").trim();
-  }
-
-  const link = config.telegram || "";
-  return link.replace(/^https?:\/\/t\.me\//i, "").replace(/\/$/, "").trim();
-}
-
-function buildTelegramMessageUrl(username, message) {
-  const encoded = encodeURIComponent(message);
-  return `https://t.me/${username}?text=${encoded}`;
-}

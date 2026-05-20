@@ -43,7 +43,15 @@ python3 -m http.server 8771 --directory .
 
 `config.js` — ссылки, `waitlistTelegram` (username для формы курса), пути к фото.
 
-**Лист ожидания:** кнопка открывает форму → «Отправить в Telegram» → чат `@vam_svetlo` с готовым текстом заявки (нужно нажать «Отправить» в Telegram).
+**Лист ожидания:** форма → `POST /api/waitlist` → бот [@primera_lera_bot](https://t.me/primera_lera_bot).
+
+Настройка бота (один раз):
+
+1. В Telegram откройте [@primera_lera_bot](https://t.me/primera_lera_bot) → **Start**.
+2. На задеплоенном сайте откройте `/api/waitlist-setup` — скопируйте `chat_id`.
+3. Вставьте в `api/telegram.js` → `CHAT_ID`, затем `vercel --prod` (или push в `main`).
+
+Токен бота лежит в `api/telegram.js` (только сервер Vercel, не в браузере).
 
 ## Ветки
 
