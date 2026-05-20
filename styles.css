@@ -38,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -55,6 +56,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   min-height: 100dvh;
   font-family: var(--font-body);
   font-size: 15px;
@@ -86,9 +88,11 @@ body {
 
 .page {
   max-width: var(--max);
+  width: 100%;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 3rem;
   padding-bottom: calc(3rem + env(safe-area-inset-bottom));
+  overflow-x: clip;
 }
 
 /* —— Hero —— */
@@ -117,7 +121,7 @@ body {
   letter-spacing: 0.01em;
   text-align: center;
   color: var(--sage-deep);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero__portrait {
@@ -220,14 +224,15 @@ body {
 
 .block--topics {
   position: relative;
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .block__flower {
   position: absolute;
-  right: -8%;
+  right: -4%;
   top: 2.5rem;
-  width: min(78vw, 300px);
+  width: min(72vw, 260px);
   height: auto;
   opacity: 0.6;
   mix-blend-mode: screen;
@@ -408,14 +413,15 @@ body {
 
 .block--do {
   position: relative;
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .block__deco--bowl {
   position: absolute;
-  right: -12%;
+  right: -6%;
   top: 2.75rem;
-  width: min(85vw, 300px);
+  width: min(72vw, 260px);
   height: auto;
   opacity: 0.7;
   z-index: 0;
@@ -483,7 +489,7 @@ body {
   line-height: 1;
   color: var(--matcha);
   font-weight: 400;
-  white-space: nowrap;
+  white-space: normal;
   letter-spacing: -0.01em;
 }
 
