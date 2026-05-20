@@ -21,6 +21,18 @@ python3 -m http.server 8771 --directory .
 
 Другой порт: `PORT=8780 ./serve.sh`
 
+## Деплой на Vercel
+
+Репозиторий: [rigsbey/nutridesk_taplink](https://github.com/rigsbey/nutridesk_taplink) — ветка **`main`** (актуальный лендинг).
+
+1. [Import project](https://vercel.com/new/import?s=https://github.com/rigsbey/nutridesk_taplink) → войти в GitHub, если попросит.
+2. **Production Branch:** `main`
+3. **Framework Preset:** Other (или без фреймворка)
+4. **Build Command** — пусто, **Output Directory** — `.` (корень)
+5. Deploy → каждый push в `main` будет обновлять прод.
+
+Сайт статический (`index.html` в корне), сборка не нужна.
+
 ## Шрифты
 
 - **Montserrat** — текст (Google Fonts)
